@@ -15,7 +15,7 @@ after_success:
   - docker build -t ak1738/multi-server ./server
   - docker build -t ak1738/multi-worker ./worker
 
-  - echo $DOCKER_PASSWORD | docker login -u "$DOCKER_ID" --pasword-stdin  # login to docker
+  - echo $DOCKER_PASSWORD | docker login -u "$DOCKER_ID" --password-stdin  # login to docker
   - docker push ak1738/multi-client
   - docker push ak1738/multi-nginx
   - docker push ak1738/multi-server
