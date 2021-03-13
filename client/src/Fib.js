@@ -22,8 +22,8 @@ const Fib = () => {
             setValues(data);
         };
         const fetchIndices = async () => {
-          const {data} = await axios.get('/api/values/all');
-          setSeenIndices(data);
+            const {data} = await axios.get('/api/values/all');
+            setSeenIndices(data);
         };
 
         fetchValues();
@@ -31,7 +31,7 @@ const Fib = () => {
     }, []);
 
     const renderSeenIndices = () => {
-      return seenIndices.map(({number}) => number).join(', ');
+        return seenIndices.map(({number}) => number).join(', ');
     };
 
     const renderValues = () => {
@@ -55,13 +55,17 @@ const Fib = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <label>Enter a fib index:</label>
-                <input
-                    value={index}
-                    onChange={e => setIndex(e.target.value)}
-                />
-                <button>Submit</button>
+            <form onSubmit={handleSubmit} className="ui form">
+                <div className="inline field">
+                    <label>Enter a fib index: </label>
+                    <div className="ui action input">
+                        <input
+                            value={index}
+                            onChange={e => setIndex(e.target.value)}
+                        />
+                        <button className="ui button" type="submit">Submit</button>
+                    </div>
+                </div>
             </form>
 
             <h3>Indices I have seen:</h3>

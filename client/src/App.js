@@ -14,8 +14,10 @@ const App = () => {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     <Link to="/">Home</Link>
+                    <br />
                     <Link to="/otherpage">Other Page</Link>
                 </header>
+                <br />
                 <div>
                     <Route exact path="/" component={Fib}/>
                     <Route path="/otherpage" component={OtherPage}/>
